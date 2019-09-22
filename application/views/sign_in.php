@@ -67,18 +67,19 @@ echo "1";
 								    <h1 class="h3 mb-3 font-weight-normal">Sign In</h1>
 								    <div class="form-group">				    	
 								    		<label for="inputEmail" class="sr-only">Email address</label>
-								    		<input type="email" id="inputEmail" class="form-control" placeholder="Email address" required autofocus autocomplete="off" data-toggle="tooltip" data-placement="top" title="Email address">
+								    		<input type="email" id="inputEmail"  name="inputEmail" class="form-control" placeholder="Email address" required autofocus autocomplete="off" data-toggle="tooltip" data-placement="top" title="Email address">
 								    </div>
 								    <div class="form-group">
 								    	<label for="inputPassword" class="sr-only">Password</label>
-								    	<input type="password" id="inputPassword" class="form-control" placeholder="Password" required>
+								    	<input type="password" id="inputPassword" name="inputPassword" class="form-control" placeholder="Password" required>
 								    </div>
 								    <div class="checkbox mb-3">
 								        <label>
-								            <input type="checkbox" value="remember-me"> Remember me
+								            <input type="checkbox" name="remember" id="remember" value="remember-me"> Remember me
 								        </label>
 								    </div>
-								    <button class="btn btn-lg btn-primary btn-block" type="submit">Sign in</button>
+								    <input type="hidden" name="hid_function" id="hid_function" value="TEST">
+								    <button class="btn btn-lg btn-primary btn-block" name="btn_signin" value="Sign In" type="submit">Sign in</button>
 								    <center> OR </center>
 								     <button class="btn btn-lg btn-block bg-danger" type="button" style="color:#fff" onclick="redirect('register');">Register</button>
 								    <p class="mt-5 mb-3 text-muted">&copy; 2017-2018</p>
@@ -87,6 +88,7 @@ echo "1";
 				        </div>
    					 </div>
 			</div>
+			<span><?php if(isset($form_data)){ print_r($form_data) ;}?></span>
         </div>
      
  		
