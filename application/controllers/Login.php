@@ -25,26 +25,36 @@ class Login extends CI_Controller {
 		$this->load->helper('url');
 		$this->load->model('login_model');
 		$this->load->model('function_connect');
-		//$this->load->library('api');
+		$this->load->library('api');
      
     }
  
 	public function index()
 	{
-
+		 $this->load->view('sign_in');
 		$data= array();	
-		
+		$d2 = array();
 		if($this->input->post('btn_signin')!=null){
 			//$data = $this->login_model->get_last_ten_entries();
 			//echo "<pre>";
-			//$d = $this->function_connect->select_query_json('select * from task');
+			//$d1 = $this->function_connect->select_query_json('select * from task');
+			//$d2 = $this->api->select_query_json('select * from task');
 			
 			$data['form_data'] = $this->input->post();
-			//print_r($form_data);
+			//print_r($data);
+			//print_r($d2);
+          	$valid = $this->load->login_model->login_process($data);
+          	if($valid){
+          		//$this->load->view('sign_in');
+          		echo "Welcome to dashboard";
+          	}else{
+          		echo "error";
+          	}
 			
-		}
+		}	
 
-		$this->load->view('sign_in', $data);
+		// $this->load->view('sign_in', $data);// To check form-data objects
+
 		
 		
 	}
