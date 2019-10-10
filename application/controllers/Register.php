@@ -25,7 +25,7 @@ class Register extends CI_Controller {
 		$this->load->helper('url');
 		$this->load->model('register_model');
 		$this->load->model('login_model');
-		$this->load->model('function_connect');
+		$this->load->model('mysql_function_connect');
 		$this->load->library('api');
      
     }

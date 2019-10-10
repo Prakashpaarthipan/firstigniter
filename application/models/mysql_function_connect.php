@@ -1,6 +1,6 @@
 <?php
 
-   class function_connect extends CI_Model {
+   class mysql_function_connect extends CI_Model {
 
    	public  function __construct() {
         parent::__construct();

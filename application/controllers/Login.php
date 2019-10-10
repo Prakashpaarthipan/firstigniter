@@ -24,8 +24,10 @@ class Login extends CI_Controller {
        	//$this->load->database();
 		$this->load->helper('url');
 		$this->load->model('login_model');
-		$this->load->model('function_connect');
+		$this->load->model('mysql_function_connect');
+		$this->load->model('oracle_function_connect');
 		$this->load->library('api');
+		$this->load->library('session');
      
     }
  
@@ -44,9 +46,12 @@ class Login extends CI_Controller {
 			//print_r($data);
 			//print_r($d2);
           	$valid = $this->load->login_model->login_process($data);
+          	//print_r($valid);
           	if($valid){
-          		//$this->load->view('sign_in');
-          		echo "Welcome to dashboard";
+          		//$this->load->view('dashboard');          		
+          		 redirect("dashboard", "location");
+        		//return;
+          		//echo "Welcome to dashboard";
           	}else{
           		echo "error";
           	}
@@ -80,7 +85,7 @@ class Login extends CI_Controller {
 	
 	public function index1()
         {
-        	echo "<pre>";
+        	//echo "<pre>";
         	$this->load->database();
 
 		print_r($this->db);
@@ -93,5 +98,7 @@ class Login extends CI_Controller {
         		echo "false";
         	}
         }
+
+    
 		
 }

@@ -1,9 +1,9 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
-if (isset($this->session->userdata['logged_in'])) {
+// if (isset($this->session->userdata['logged_in'])) {
 
-echo "1";
-}
+// echo "1";
+// }
 
 ?>
 <!doctype html>
@@ -68,8 +68,8 @@ echo "1";
 								    <img class="mb-4" src="<?php echo base_url('img/Angular_logo.png');?>" alt="" width="90" height="90">
 								    <h1 class="h3 mb-3 font-weight-normal">Sign In</h1>
 								    <div class="form-group">				    	
-								    		<label for="inputEmail" class="sr-only">Email address</label>
-								    		<input type="text" id="inputEmail"  name="inputEmail" class="form-control" placeholder="Email ID / User ID" required autofocus autocomplete="off" data-toggle="tooltip" data-placement="right" title="Email address">
+								    		<label for="inputUsername" class="sr-only">Email address</label>
+								    		<input type="text" id="inputUsername"  name="inputUsername" class="form-control" placeholder="Email ID / User ID" required autofocus autocomplete="off" data-toggle="tooltip" data-placement="right" title="Email address">
 								    </div>
 								    <div class="form-group">
 								    	<label for="inputPassword" class="sr-only">Password</label>
