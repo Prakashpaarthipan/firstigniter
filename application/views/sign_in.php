@@ -26,6 +26,7 @@ echo "1";
         <link rel="stylesheet" href="<?php echo base_url('css/jqueryconfirm.css');?>">
         <link rel="stylesheet" href="<?php echo base_url('css/jquery-ui.min.css');?>">
         <link rel="stylesheet" href="<?php echo base_url('css/icheck-bootstrap.min.css');?>">
+        <link rel="stylesheet" href="<?php echo base_url('css/el-checkbox.css');?>">
     </head>
     <style>
     	body,html {
@@ -68,7 +69,7 @@ echo "1";
 								    <h1 class="h3 mb-3 font-weight-normal">Sign In</h1>
 								    <div class="form-group">				    	
 								    		<label for="inputEmail" class="sr-only">Email address</label>
-								    		<input type="email" id="inputEmail"  name="inputEmail" class="form-control" placeholder="Email address" required autofocus autocomplete="off" data-toggle="tooltip" data-placement="right" title="Email address">
+								    		<input type="text" id="inputEmail"  name="inputEmail" class="form-control" placeholder="Email ID / User ID" required autofocus autocomplete="off" data-toggle="tooltip" data-placement="right" title="Email address">
 								    </div>
 								    <div class="form-group">
 								    	<label for="inputPassword" class="sr-only">Password</label>
@@ -83,6 +84,16 @@ echo "1";
 								    <button class="btn btn-lg btn-primary btn-block" name="btn_signin" value="Sign In" type="submit">Sign in</button>
 								    <center> OR </center>
 								     <button class="btn btn-lg btn-block bg-danger" type="button" style="color:#fff" onclick="redirect('register');">Register</button>
+								    
+								      	<div class="form-group" style="margin: 10px">
+											<span class="margin-r" style="vertical-align: top;display: none" >DB</span>
+											<label class="el-switch el-switch-red">
+												<input type="checkbox" name="switch" id="switch" checked="" value="M" onclick="updatedbConfig()">
+												<span class="el-switch-style"></span>
+											</label>
+											<span class="margin-r" id="dBName" style="vertical-align: top" >MYSQL</span>
+										</div> 
+									
 								    <p class="mt-5 mb-3 text-muted">&copy; 2019-2020</p>
 								</form>
 				            </div>
@@ -111,11 +122,26 @@ echo "1";
         <script>
         	
         	$(document).ready(function(){        		
-			  $('[data-toggle="tooltip"]').tooltip();
+			  $('[data-toggle="tooltip"]').tooltip({trigger:"hover"});
 			});
+
            function redirect(page)
            {
            	window.location=page;
+           }
+
+           function updatedbConfig()
+           {
+           	if($("#switch:checkbox:checked").length > 0){
+           		//console.log("M");
+           		$("#switch").val("M"); 
+           		$("#dBName").text("MYSQL"); 
+           	}else{
+           		//console.log("O");
+           		$("#switch").val("O"); 
+           		$("#dBName").text("ORACLE"); 
+           		
+           	}
            }
         </script>
         

@@ -37,13 +37,13 @@
         }
         public function login_process($data)
         {
-        	// echo $data[0]['inputEmail'];
-        	// exit;
-        		$query = $this->db->get_where('user_basic', array('emailid' => 'newuser1@gmail.com'));
-		        if($query->num_rows() > 0 ){   
-		         return true;
-		        }
-		        return false;
+        	print_r($data);
+
+        		// $query = $this->db->get_where('user_basic', array('emailid' => 'newuser1@gmail.com'));
+		        // if($query->num_rows() > 0 ){   
+		        //  return true;
+		        // }
+		        // return false;
         }
        
 

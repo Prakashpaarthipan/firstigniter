@@ -21,6 +21,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
         <link rel="stylesheet" href="<?php echo base_url('css/select2.min.css');?>">
         <link rel="stylesheet" href="<?php echo base_url('css/jqueryconfirm.css');?>">
         <link rel="stylesheet" href="<?php echo base_url('css/font-awesome/css/font-awesome.min.css');?>">
+        <link rel="stylesheet" href="<?php echo base_url('css/el-checkbox.css');?>">
        
     </head>
     <style>
